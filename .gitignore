@@ -1,0 +1,2 @@
+#ignore all jupyter notebook checkmark files
+.ipynb_checkpoints/
