@@ -1,6 +1,6 @@
 # Computational Data Science Assignments
 
-## Repository in progress! 
+### Repository in progress! 
 
 Snippets of assignments completed for Computational Data Science (CMPT 353) at Simon Fraser University.
 
