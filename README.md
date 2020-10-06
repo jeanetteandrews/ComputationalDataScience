@@ -1,5 +1,7 @@
 # Computational Data Science Assignments
 
+## Repository in progress! 
+
 Snippets of assignments completed for Computational Data Science (CMPT 353) at Simon Fraser University.
 
 Libraries used:
@@ -13,8 +15,13 @@ Libraries used:
 
 Has there been grade inflation on the @dog_rates Twitter, which rates the cuteness of users' dog pictures?
 
-Code: dog-rates.ipynb – Uses simple linear regression to demonstrate increasing grade inflation on a plot.
+Code: dog-rates.ipynb – Uses simple linear regression to demonstrate increasing grade inflation on a plot. <br />
 Input: dog_rates_tweets.csv – Scraped Tweets from the @dog_rates Twitter
 
+### 2. CPU Noise Reduction: Loess & Kalman Smoothing
 
+### 3. GPS Tracks: How Far Did I Walk?
 
+### 4. Movie Title Entity Resolution
+
+### 5. Cities: Temperatures and Density
