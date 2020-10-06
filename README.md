@@ -11,7 +11,7 @@ Libraries used:
 * scipy
 * seaborn
 
-### 1. [Pup Inflation: Analyzing Tweets](https://github.com/jeanetteandrews/ComputationalDataScience/tree/master/1_PupInflation)
+### 1. [Pup Inflation](https://github.com/jeanetteandrews/ComputationalDataScience/tree/master/1_PupInflation): Analyzing Tweets
 
 Has there been grade inflation on the [@dog_rates](https://twitter.com/dog_rates) Twitter, which rates the cuteness of users' dog pictures?
 
