@@ -2,7 +2,7 @@
 
 ### Repository in progress! 
 
-Snippets of assignments completed for Computational Data Science (CMPT 353) at Simon Fraser University.
+Snippets of assignments for Computational Data Science (CMPT 353) at Simon Fraser University.
 
 Libraries used:
 * pandas
