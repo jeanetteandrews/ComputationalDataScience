@@ -38,7 +38,9 @@ Code: [smooth_temperature.py](https://github.com/jeanetteandrews/ComputationalDa
 Input: [sysinfo.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/2_CPUNoiseReduction/sysinfo.csv) <br />
 Output: [cpu.png](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/2_CPUNoiseReduction/cpu.png) (the image below)
 
+<p align="center">
 <img src="https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/2_CPUNoiseReduction/cpu.png" width="500"/>
+</p>
 
 It looks like the Kalman filter picks up smaller variations in the data, whereas the LOESS smoothing removes smaller variations that actually might've existed.
 
@@ -52,7 +54,9 @@ Code: [calc_distance.py](https://github.com/jeanetteandrews/ComputationalDataSci
 Input: [walk1.gpx](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/3_GPSTracks/walk1.gpx) <br />
 Output: [out.gpx](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/3_GPSTracks/out.gpx) (converted using [MyGPSFiles](http://www.mygpsfiles.com/app/))
 
-<img src="https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/3_GPSTracks/MyGPSFiles.png" width="500"/>
+<p align="center">
+<img src="https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/3_GPSTracks/MyGPSFiles.png" width="400"/>
+</p>
 
 Unfiltered distance: 3186.44 meters <br />
 Filtered distance: 1407.33 meters
