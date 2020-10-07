@@ -10,6 +10,8 @@ Libraries used:
 * matplotlib.pyplot
 * scipy
 * seaborn
+* statsmodels.nonparametric.smoothers_lowess
+* pykalman
 
 ### 1. [Pup Inflation](https://github.com/jeanetteandrews/ComputationalDataScience/tree/master/1_PupInflation): Analyzing Tweets
 
@@ -20,8 +22,11 @@ Input: [dog_rates_tweets.csv](https://github.com/jeanetteandrews/ComputationalDa
 
 ### 2. CPU Noise Reduction: LOESS & Kalman Smoothing
 
-If you have a look, you will see that there's a certain amount of noise from the temperature sensor, but it also seems like there are some legitimate changes in the true temperature. We would like to separate these as best possible and determine the CPU temperature as closely as we can.
+sysinfo.csv contains data on the CPU temperature and usage of one of my prof's computers, sampling every minute. That gives a temperature (in °C), CPU usage (in percent), and one-minute system load (number of processes running/waiting averaged over the last minute). You will see that there's a certain amount of noise from the temperature sensor, but it also seems like there are some legitimate changes in the true temperature. We would like to separate these as best possible and determine the CPU temperature as closely as we can.
 
+We want to adjust the parameters of the LOESS and Kalman filters to get as much signal as possible with as little noise as possible. The contrasting factors: (1) when the temperature spikes (because of momentary CPU usage), the high temperature values are reality and we don't want to smooth that information out of existence, but (2) when the temperature is relatively flat (where the computer is not in use), the temperature is probably relatively steady, not jumping randomly between 30°C and 33°C as the data implies.
+
+It looks like the Kalman filter picks up smaller variations in the data, whereas the LOESS smoothing removes smaller variations that actually might've existed.
 
 ### 3. GPS Tracks: How Far Did I Walk?
 
