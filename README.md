@@ -48,7 +48,7 @@ It looks like the Kalman filter picks up smaller variations in the data, whereas
 
 [walk1.gpx](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/3_GPSTracks/walk1.gpx) includes a recorded path from walking around downtown Vancouver.
 
-How far did I walk? The answer to this can't be immediately calculated from the tracks, since the noise makes it look like I ran across the street, crossed back, backed up, jumped forward, etc. I actually walked in mostly-straight lines. On the other hand, we can't just take the difference between the starting and ending points: I didn't walk a completely straight line either.
+How far did I walk? The answer to this can't be immediately calculated from the tracks, since the noise makes it look like I ran across the street, crossed back, backed up, and jumped forward. I actually walked in mostly-straight lines. On the other hand, we can't just take the difference between the starting and ending points: I didn't walk a completely straight line either.
 
 Code: [calc_distance.py](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/3_GPSTracks/calc_distance.py) <br />
 Input: [walk1.gpx](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/3_GPSTracks/walk1.gpx) <br />
