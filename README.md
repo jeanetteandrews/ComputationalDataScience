@@ -7,6 +7,7 @@ Snippets of assignments for Computational Data Science (CMPT 353) at Simon Frase
 ### Table of Contents
 1. [Pup Inflation: Analyzing Tweets](https://github.com/jeanetteandrews/ComputationalDataScience#1-pup-inflation-analyzing-tweets)
 2. [CPU Noise Reduction: LOESS & Kalman Smoothing](https://github.com/jeanetteandrews/ComputationalDataScience#2-cpu-noise-reduction-loess--kalman-smoothing)
+3. [GPS Tracks: How Far Did I Walk?](https://github.com/jeanetteandrews/ComputationalDataScience#3-gps-tracks-how-far-did-i-walk)
 
 ### Libraries used:
 * pandas
@@ -16,6 +17,7 @@ Snippets of assignments for Computational Data Science (CMPT 353) at Simon Frase
 * seaborn
 * statsmodels.nonparametric.smoothers_lowess
 * pykalman
+* xml.etree.ElementTree 
 
 ## Assignments
 
@@ -24,7 +26,7 @@ Snippets of assignments for Computational Data Science (CMPT 353) at Simon Frase
 Has there been grade inflation on the [@dog_rates](https://twitter.com/dog_rates) Twitter, which rates the cuteness of users' dog pictures?
 
 Code: [dog-rates.ipynb](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/1_PupInflation/dog-rates.ipynb) – Notebook that uses simple linear regression to demonstrate increasing grade inflation on a plot. <br />
-Input: [dog_rates_tweets.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/1_PupInflation/dog_rates_tweets.csv) – CSV of scraped Tweets from the @dog_rates Twitter.
+Input: [dog_rates_tweets.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/1_PupInflation/dog_rates_tweets.csv) – CSV of scraped Tweets from the [@dog_rates](https://twitter.com/dog_rates) Twitter.
 
 ### 2. [CPU Noise Reduction](https://github.com/jeanetteandrews/ComputationalDataScience/tree/master/2_CPUNoiseReduction): LOESS & Kalman Smoothing
 
@@ -41,6 +43,14 @@ Output: [cpu.png](https://github.com/jeanetteandrews/ComputationalDataScience/bl
 It looks like the Kalman filter picks up smaller variations in the data, whereas the LOESS smoothing removes smaller variations that actually might've existed.
 
 ### 3. GPS Tracks: How Far Did I Walk?
+
+walk1.gpx includes a recorded path from walking around downtown Vancouver.
+
+How far did I walk? The answer to this can't be immediately calculated from the tracks, since the noise makes it look like I ran across the street, crossed back, backed up, jumped forward, etc. I actually walked in mostly-straight lines. On the other hand, we can't just take the difference between the starting and ending points: I didn't walk a completely straight line either.
+
+Code: calc_distance.py
+Input: walk1.gpx
+Output: out.gpx (image below)
 
 ### 4. Movie Title Entity Resolution
 
