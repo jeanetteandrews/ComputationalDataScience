@@ -9,6 +9,7 @@ Snippets of assignments for Computational Data Science (CMPT 353) at Simon Frase
 2. [CPU Noise Reduction: LOESS & Kalman Smoothing](https://github.com/jeanetteandrews/ComputationalDataScience#2-cpu-noise-reduction-loess--kalman-smoothing)
 3. [GPS Tracks: How Far Did I Walk?](https://github.com/jeanetteandrews/ComputationalDataScience#3-gps-tracks-how-far-did-i-walk)
 4. [Movie Title Entity Resolution](https://github.com/jeanetteandrews/ComputationalDataScience#4-movie-title-entity-resolution)
+5. [Cities: Temperatures and Density](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/README.md#5-cities-temperatures-and-density)
 
 ### Libraries used:
 * pandas
@@ -75,4 +76,18 @@ Code: [average_ratings.py](https://github.com/jeanetteandrews/ComputationalDataS
 Input: [movie_list.txt](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/4_MovieTitleEntityResolution/movie_list.txt) and [movie_ratings.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/4_MovieTitleEntityResolution/movie_ratings.csv) <br />
 Output: [output.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/4_MovieTitleEntityResolution/output.csv)
 
-### 5. Cities: Temperatures and Density
+### 5. [Cities](https://github.com/jeanetteandrews/ComputationalDataScience/tree/master/5_CitiesTempAndDensity): Temperatures and Density
+
+Is there any correlation between population density and temperature? It's an artificial question, but one we can answer.
+
+We have [stations.json.gz](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/5_CitiesTempAndDensity/stations.json.gz), a collection of weather stations, and [city_data.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/5_CitiesTempAndDensity/city_data.csv) a collection of cities.
+
+Both data sets contain a latitude and longitude, but they don't refer to exactly the same locations. A city's “location” is some point near the center of the city. That is very unlikely to be the exact location of a weather station, but there is probably one nearby.
+
+We'll need to find the weather station that is closest to each city. This takes an O(mn) kind of calculation–the distance between every city and station pair must be calculated. 
+
+Code: [temperature_correlation.py](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/5_CitiesTempAndDensity/temperature_correlation.py) <br />
+Input: [stations.json.gz](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/5_CitiesTempAndDensity/stations.json.gz) and [city_data.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/5_CitiesTempAndDensity/city_data.csv) <br />
+Output: [output.png](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/5_CitiesTempAndDensity/output.png)
+
+For the record, daily temperatures is not a good way to predict population density.
