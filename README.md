@@ -8,6 +8,7 @@ Snippets of assignments for Computational Data Science (CMPT 353) at Simon Frase
 1. [Pup Inflation: Analyzing Tweets](https://github.com/jeanetteandrews/ComputationalDataScience#1-pup-inflation-analyzing-tweets)
 2. [CPU Noise Reduction: LOESS & Kalman Smoothing](https://github.com/jeanetteandrews/ComputationalDataScience#2-cpu-noise-reduction-loess--kalman-smoothing)
 3. [GPS Tracks: How Far Did I Walk?](https://github.com/jeanetteandrews/ComputationalDataScience#3-gps-tracks-how-far-did-i-walk)
+4. [Movie Title Entity Resolution](https://github.com/jeanetteandrews/ComputationalDataScience#4-movie-title-entity-resolution)
 
 ### Libraries used:
 * pandas
@@ -18,6 +19,7 @@ Snippets of assignments for Computational Data Science (CMPT 353) at Simon Frase
 * statsmodels.nonparametric.smoothers_lowess
 * pykalman
 * xml.etree.ElementTree 
+* difflib
 
 ## Assignments
 
@@ -30,9 +32,9 @@ Input: [dog_rates_tweets.csv](https://github.com/jeanetteandrews/ComputationalDa
 
 ### 2. [CPU Noise Reduction](https://github.com/jeanetteandrews/ComputationalDataScience/tree/master/2_CPUNoiseReduction): LOESS & Kalman Smoothing
 
-[sysinfo.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/2_CPUNoiseReduction/sysinfo.csv) contains samples my prof's CPU temperature, including temperature (in °C), CPU usage (in percent), and one-minute system load (number of processes running/waiting averaged over the last minute). You will see that there's a certain amount of noise from the temperature sensor, but it also seems like there are some legitimate changes in the true temperature.
+[sysinfo.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/2_CPUNoiseReduction/sysinfo.csv) contains samples of CPU temperature (in °C), CPU usage (in percent), and one-minute system load (number of processes running/waiting averaged over the last minute). You will see that there's a certain amount of noise from the temperature sensor, but it also seems like there are some legitimate changes in the true temperature.
 
-We want to adjust the parameters of the LOESS and Kalman filters to get as much signal as possible with as little noise as possible. The contrasting factors: (1) when the temperature spikes (because of momentary CPU usage), the high temperature values are reality and we don't want to smooth that information out of existence, but (2) when the temperature is relatively steady (where the computer is not in use), not jumping randomly between 30°C and 33°C as the data implies.
+We want to adjust the parameters of the LOESS and Kalman filters to get as much signal with as little noise as possible. The contrasting factors: (1) when the temperature spikes (because of momentary CPU usage), the high temperature values are reality and we don't want to smooth that information out of existence, but (2) when the temperature is relatively steady (where the computer is not in use), not jumping randomly between 30°C and 33°C as the data implies.
 
 Code: [smooth_temperature.py](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/2_CPUNoiseReduction/smooth_temperature.py) <br />
 Input: [sysinfo.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/2_CPUNoiseReduction/sysinfo.csv) <br />
@@ -48,7 +50,7 @@ It looks like the Kalman filter picks up smaller variations in the data, whereas
 
 [walk1.gpx](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/3_GPSTracks/walk1.gpx) includes a recorded path from walking around downtown Vancouver.
 
-How far did I walk? The answer to this can't be immediately calculated from the tracks, since the noise makes it look like I ran across the street, crossed back, backed up, and jumped forward. I actually walked in mostly-straight lines. On the other hand, we can't just take the difference between the starting and ending points: I didn't walk a completely straight line either.
+How far did I walk? The answer to this can't be immediately calculated from the tracks, since the noise makes it look like I ran across the street, crossed back, backed up, and jumped forward. I actually walked in mostly-straight lines. On the other hand, we can't just take the difference between the starting and ending points; I didn't walk a completely straight line either.
 
 Code: [calc_distance.py](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/3_GPSTracks/calc_distance.py) <br />
 Input: [walk1.gpx](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/3_GPSTracks/walk1.gpx) <br />
@@ -61,6 +63,16 @@ Output: [out.gpx](https://github.com/jeanetteandrews/ComputationalDataScience/bl
 Unfiltered distance: 3186.44 meters <br />
 Filtered distance: 1407.33 meters
 
-### 4. Movie Title Entity Resolution
+### 4. [Movie Title Entity Resolution](https://github.com/jeanetteandrews/ComputationalDataScience/tree/master/4_MovieTitleEntityResolution)
+
+[movie_list.txt](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/4_MovieTitleEntityResolution/movie_list.txt) is a list of movie titles.
+
+[movie_ratings.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/4_MovieTitleEntityResolution/movie_ratings.csv)  contains users' rating of movies: titles and ratings. Except... the users have misspelled the titles. There are also some completely incorrect titles that have nothing to do with the movie list that should be ignored.
+
+Using [Python difflib.get_close_matches](https://docs.python.org/3/library/difflib.html#difflib.get_close_matches), we want to determine the average rating for each movie, compensating for the bad spelling in the [movie_ratings.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/4_MovieTitleEntityResolution/movie_ratings.csv) file.
+
+Code: [average_ratings.py](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/4_MovieTitleEntityResolution/average_ratings.py) <br />
+Input: [movie_list.txt](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/4_MovieTitleEntityResolution/movie_list.txt) and [movie_ratings.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/4_MovieTitleEntityResolution/movie_ratings.csv) <br />
+Output: [output.csv](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/4_MovieTitleEntityResolution/output.csv)
 
 ### 5. Cities: Temperatures and Density
