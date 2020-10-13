@@ -108,3 +108,19 @@ Input: [reddit-counts.json.gz](https://github.com/jeanetteandrews/ComputationalD
 
 Based on all our tests, yes, there are a different number of comments posted on weekdays than on weekends. More Reddit comments in [/r/canada](https://www.reddit.com/r/canada/) are posted, on average, during weekdays. The Central Limit Theorem probably got us the closest to the normality of the distributions. We could say that the t-test on this distribution gives us a more confident answer.
 
+### 7. [A/B Testing](https://github.com/jeanetteandrews/ComputationalDataScience/tree/master/7_ABTesting): Non-Parametric Tests
+
+[searches.json](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/7_ABTesting/searches.json) (some made-up data) has information about users' usage of a “search” feature (where the A/B test happened). Users with an odd-numbered user ID were shown a new-and-improved search box. Others were shown the original design.
+
+Do people search more with the new design? There are a few ways to approach this problem:
+
+* Did more users use the search feature? More precisely: did a different fraction of users have search count > 0?
+* Did users search more often? More precisely: is the number of searches per user different?
+
+We'll use a [chi-square contingency test](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2_contingency.html) and a [Mann–Whitney U-test](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html) to answer this.
+
+Code: [ab_analysis.py](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/7_ABTesting/ab_analysis.py) <br />
+Input: [searches.json](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/7_ABTesting/searches.json)
+
+Overall, we can't reject the null hypothesis that the number of searches for the new design and old design are the same (or worded slightly differently, we can't conclude that the number of searches per user is different). We also can't reject the hypothesis that the same fraction of users are performing the two types of searches. However, for the instructor subset, with a p-value = 0.045, we can just barely reject the hypothesis that the number of searches per user is the same. In terms of the fraction of instructors who are doing searches, the p-value = 0.052 is very close to us rejecting the null hypothesis that the fraction of instructors who are searching on the old design is the same as the fraction of instructors searching on the new design.
+
