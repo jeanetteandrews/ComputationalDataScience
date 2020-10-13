@@ -10,6 +10,7 @@ Snippets of assignments for Computational Data Science (CMPT 353) at Simon Frase
 3. [GPS Tracks: How Far Did I Walk?](https://github.com/jeanetteandrews/ComputationalDataScience#3-gps-tracks-how-far-did-i-walk)
 4. [Movie Title Entity Resolution](https://github.com/jeanetteandrews/ComputationalDataScience#4-movie-title-entity-resolution)
 5. [Cities: Temperatures and Density](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/README.md#5-cities-temperatures-and-density)
+6. [Reddit Weekends](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/README.md#6-reddit-weekends)
 
 ### Libraries used:
 * pandas
@@ -102,7 +103,7 @@ Are there a different number of Reddit comments posted on weekdays than on weeke
 
 3. Use a non-parametric test. The [Mann–Whitney U-test](https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test) doesn't care about the shape of its input as much–it does not assume normally-distributed values, or equal variance. We'll perform a U-test on the original non-transformed, non-aggregated counts. If we reach a conclusion because of a U-test, it's something like: it's not equally-likely that the larger number of comments occur on weekends vs weekdays.
 
-Code: [reddit_weekends.py](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/6_RedditWeekends/reddit_weekends.py)
+Code: [reddit_weekends.py](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/6_RedditWeekends/reddit_weekends.py) <br />
 Input: [reddit-counts.json.gz](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/6_RedditWeekends/reddit-counts.json.gz) – Contains a count of the number of comments posted daily in each Canadian-province subreddit, and in [/r/canada](https://www.reddit.com/r/canada/).
 
 Based on all our tests, yes, there are a different number of comments posted on weekdays than on weekends. More Reddit comments in [/r/canada](https://www.reddit.com/r/canada/) are posted, on average, during weekdays. The Central Limit Theorem probably got us the closest to the normality of the distributions. We could say that the t-test on this distribution gives us a more confident answer.
