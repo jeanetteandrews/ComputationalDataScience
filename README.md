@@ -11,6 +11,7 @@ Snippets of assignments for Computational Data Science (CMPT 353) at Simon Frase
 4. [Movie Title Entity Resolution](https://github.com/jeanetteandrews/ComputationalDataScience#4-movie-title-entity-resolution)
 5. [Cities: Temperatures and Density](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/README.md#5-cities-temperatures-and-density)
 6. [Reddit Weekends](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/README.md#6-reddit-weekends)
+7. [A/B Testing: Non-Parametric Tests](https://github.com/jeanetteandrews/ComputationalDataScience/blob/master/README.md#7-ab-testing-non-parametric-tests)
 
 ### Libraries used:
 * pandas
